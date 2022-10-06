@@ -7,4 +7,4 @@ def index(request):
         "name": "Arun",
         "age": 20,
     }
-    return HttpResponse("<b>Hello World</b>")
+    return HttpResponse("<b>Hello Worldsss</b>")
