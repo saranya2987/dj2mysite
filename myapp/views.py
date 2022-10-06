@@ -6,5 +6,6 @@ def index(request):
     d={
         "name": "Arun",
         "age": 20,
+
     }
-    return HttpResponse("<b>Hello Worldsss</b>")
+    return HttpResponse("<b>Hello Worlds</b>")
