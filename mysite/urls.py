@@ -16,7 +16,7 @@ Including another URLconf
 from xml.etree.ElementInclude import include
 from django.contrib import admin
 from django.urls import path,include
-from myapp.views import index, new_one
+from myapp.views import index, new_one, my_place
 
 urlpatterns = [
     path('admin/', admin.site.urls),
