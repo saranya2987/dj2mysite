@@ -1,5 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.db.models import Q
+from myapp.models import Product
 
 # Create your views here.
 
@@ -24,5 +26,13 @@ def new_one(request):
 
 def my_place(request):
     return render(request, 'listing/my_place.html')
+
+def products(request):
+    #p = Product.objects.filter(price__gt = 17000)
+    p = Product.objects.all()
+    context = {'products':p}
+    return render(request, 'myapp/products.html',context=context)
+
+
 
 
