@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
 <style>
     .card{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -38,23 +36,16 @@
     }
 </style>
 
+</head>
 <body>
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX86hbs6FBScJT92T4DCcE_oSwyMimOZ4VsldO7fTYZTF5Srg-nsL1u9S-fEQSQ53FF2g&usqp=CAU"
+            alt="Denim Jeans" style="width:100%">
+        <h1>{{p.name}}</h1>
+        <p class="price">$ {{p.price}}</p>
+        <p>{{p.description}}<br></p>
+        <br>
+        <br>
 
-    {% for p in products %}
-    <ol>
-        <h2 style="text-align:center">Product Card</h2>
-        <a href="/myapp/products/{{p.id}}">
-        <div class="card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX86hbs6FBScJT92T4DCcE_oSwyMimOZ4VsldO7fTYZTF5Srg-nsL1u9S-fEQSQ53FF2g&usqp=CAU"
-                alt="Denim Jeans" style="width:100%">
-            <h1>{{p.name}}</h1>
-            <p class="price">$ {{p.price}}</p>
-            <p>{{p.description}}<br></p>
-            <br>
-            <br>
-        </div>
-    </ol>
-    {% endfor %}
 </body>
-
 </html>

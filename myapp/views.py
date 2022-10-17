@@ -1,3 +1,4 @@
+from multiprocessing import context
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.db.models import Q
@@ -32,6 +33,21 @@ def products(request):
     p = Product.objects.all()
     context = {'products':p}
     return render(request, 'myapp/products.html',context=context)
+
+def product_details(request,id):
+    p = Product.objects.get(id=id)
+    context = {'p':p}
+    return render(request, 'myapp/product_details.html',context=context)
+
+def add_product(request):
+    p = Product()
+    p.name = "LG 32 Inch HD TV"
+    p.price = 42500.0
+    p.description = "This is a LG TV"
+    
+    print(p)
+
+    return HttpResponse(p)
 
 
 
