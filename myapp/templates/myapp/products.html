@@ -43,7 +43,7 @@
     {% for p in products %}
     <ol>
         <h2 style="text-align:center">Product Card</h2>
-        <a href="/myapp/products/{{p.id}}">
+    <a href="{% url 'product_details' p.id %}">
         <div class="card">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX86hbs6FBScJT92T4DCcE_oSwyMimOZ4VsldO7fTYZTF5Srg-nsL1u9S-fEQSQ53FF2g&usqp=CAU"
                 alt="Denim Jeans" style="width:100%">

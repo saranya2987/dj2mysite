@@ -40,12 +40,10 @@ def product_details(request,id):
     return render(request, 'myapp/product_details.html',context=context)
 
 def add_product(request):
-    p = Product()
-    p.name = "LG 32 Inch HD TV"
-    p.price = 42500.0
-    p.description = "This is a LG TV"
+    p = Product(name= "Samsung 32 Inch Monitor",price = 36000.0)
+    p.description = "This is a Samsung Monitor"
     
-    print(p)
+    p.save()
 
     return HttpResponse(p)
 
