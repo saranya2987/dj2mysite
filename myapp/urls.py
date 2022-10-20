@@ -7,4 +7,6 @@ urlpatterns = [
     path('products/',products, name='products'),
     path('products/<int:id>',product_details,name='product_details'),
     path('products/add',add_product,name='add_product'),
+    path('__reload__/', include('django_browser_reload.urls')),
+
 ]

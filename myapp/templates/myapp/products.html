@@ -1,3 +1,5 @@
+{% load tailwind_tags %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,55 +8,59 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    {% tailwind_css %}
+    <!-- <style>
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            max-width: 300px;
+            margin: auto;
+            text-align: center;
+            font-family: arial;
+        }
+
+        .price {
+            color: grey;
+            font-size: 22px;
+        }
+
+        .card button {
+            border: none;
+            outline: 0;
+            padding: 12px;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+        }
+
+        .card button:hover {
+            opacity: 0.7;
+        }
+    </style> -->
 </head>
-<style>
-    .card{
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-    margin: auto;
-    text-align: center;
-    font-family: arial;
-    }
-
-    .price {
-        color: grey;
-        font-size: 22px;
-    }
-
-    .card button {
-        border: none;
-        outline: 0;
-        padding: 12px;
-        color: white;
-        background-color: #000;
-        text-align: center;
-        cursor: pointer;
-        width: 100%;
-        font-size: 18px;
-    }
-
-    .card button:hover {
-        opacity: 0.7;
-    }
-</style>
 
 <body>
+    <div class="flex flex-wrap">
 
-    {% for p in products %}
-    <ol>
+        {% for p in products %}
+        <div class="box-content h-64 w-32 p-4 border-4 rounded-lg">
         <h2 style="text-align:center">Product Card</h2>
-    <a href="{% url 'product_details' p.id %}">
-        <div class="card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX86hbs6FBScJT92T4DCcE_oSwyMimOZ4VsldO7fTYZTF5Srg-nsL1u9S-fEQSQ53FF2g&usqp=CAU"
-                alt="Denim Jeans" style="width:100%">
-            <h1>{{p.name}}</h1>
-            <p class="price">$ {{p.price}}</p>
-            <p>{{p.description}}<br></p>
-            <br>
-            <br>
+        <a href="{% url 'product_details' p.id %}">
+            <div class="card">
+                <img src="{{p.image.url}}" alt="Image Not" style="width: 200px">
+                <h1 class="text-sky-500">{{p.name}}</h1>
+                <p class="price">$ {{p.price}}</p>
+                <p>{{p.description}}<br></p>
+                <br>
+                <br>
+            </div></a>
         </div>
-    </ol>
-    {% endfor %}
+
+            {% endfor %}
+    </div>
+
 </body>
 
 </html>
