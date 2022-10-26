@@ -40,12 +40,12 @@ def product_details(request,id):
     return render(request, 'myapp/product_details.html',context=context)
 
 def add_product(request):
-    p = Product(name= "Samsung 32 Inch Monitor",price = 36000.0)
-    p.description = "This is a Samsung Monitor"
+    # p = Product(name= "Samsung 32 Inch Monitor",price = 36000.0)
+    # p.description = "This is a Samsung Monitor"
     
-    p.save()
+    # p.save()
 
-    return HttpResponse(p)
+    return render(request, 'myapp/add_product.html')
 
 
 
